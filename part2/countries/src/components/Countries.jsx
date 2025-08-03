@@ -9,26 +9,7 @@ const Countries = ({ countries, searchText, setSearchText }) => {
 		item.name.common.toLowerCase().includes(searchText.toLowerCase())
 	);
 	if (matchingCountries.length === 1) {
-		const foundCountry = matchingCountries[0];
-		const languages = Object.values(foundCountry.languages);
-		const apiKey = import.meta.env.VITE_API_KEY;
-		const [lat, lon] = foundCountry.capitalInfo.latlng;
-		// console.log(lat, lang);
-
-		return (
-			// <div>
-			// 	<h1>{foundCountry.name.common}</h1>
-			// 	<div>Capital {foundCountry.capital[0]}</div>
-			// 	<div>Area {foundCountry.area}</div>
-			// 	<ul>
-			// 		{languages.map((lang) => (
-			// 			<li key={lang}>{lang}</li>
-			// 		))}
-			// 	</ul>
-			// 	<img src={foundCountry.flags.png} alt={foundCountry.flags.alt} />
-			// </div>
-			<Country foundCountry={foundCountry} />
-		);
+		return <Country foundCountry={foundCountry} />;
 	}
 	return (
 		<div>

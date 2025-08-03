@@ -18,7 +18,6 @@ const App = () => {
 		fetchCountries().then((allCountries) => setCountries(allCountries));
 	}, []);
 
-	// console.log(countries[0].name.common);
 	return (
 		<div>
 			<Search searchText={searchText} setSearchText={setSearchText} />
