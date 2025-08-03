@@ -9,6 +9,8 @@ const Countries = ({ countries, searchText, setSearchText }) => {
 		item.name.common.toLowerCase().includes(searchText.toLowerCase())
 	);
 	if (matchingCountries.length === 1) {
+		const foundCountry = matchingCountries[0];
+
 		return <Country foundCountry={foundCountry} />;
 	}
 	return (
